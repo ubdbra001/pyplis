@@ -570,7 +570,7 @@ def bytescale(data, cmin=None, cmax=None, high=255, low=0):
     bytedata = (data * 1.0 - cmin) * scale + 0.4999
     bytedata[bytedata > high] = high
     bytedata[bytedata < 0] = 0
-    return bytearray.astype(uint8) + low.astype(uint8)
+    return bytedata.astype(uint8) + uint8(low)
 
 
 if __name__ == "__main__":
